@@ -1,64 +1,47 @@
-## Prueba Técnica para Desarrollador Junior
+# Prueba Técnica para Desarrollador Junior - Jikan API
 
-### Instrucciones Generales:
+##### Desarrolla una Aplicación para Explorar Anime y Manga
 
-1. **Duración:**
+API: [Jikan API](https://jikan.moe/)
 
-    - Tienes un plazo de 48 horas para completar la prueba técnica.
+### Requerimientos:
 
-2. **Entorno de Desarrollo:**
+-   Información Detallada por ID:
 
-    - Utiliza el lenguaje de programación de tu elección.
-    - Asegúrate de incluir instrucciones claras sobre cómo ejecutar tu código.
+    Crea una interfaz que permita a los usuarios ingresar el ID de un anime y obtener información detallada sobre él desde la Jikan API.
 
-3. **Jikan API:**
-    - Utiliza la [Jikan API](https://jikan.moe/) para obtener información sobre anime y manga.
-    - Documentación: [Jikan API Documentation](https://jikan.docs.apiary.io/)
+-   Búsqueda por Nombre:
 
-### Tareas:
+    Implementa un mecanismo de búsqueda que permita a los usuarios buscar animes por su nombre. Los resultados deben incluir título, género y una breve descripción.
 
-#### 1. Obtener Información de un Anime por ID
+-   Top 5 Animes Populares:
 
-Escribe un programa que haga una solicitud a la Jikan API para obtener información detallada sobre un anime específico. El ID del anime debe ser proporcionado como entrada por el usuario.
+    Desarrolla una sección que muestre los 5 animes más populares actualmente, con información como el título, la puntuación y el número de episodios.
 
-#### 2. Buscar Animes por Nombre
+-   Detalles de un Personaje de Anime:
 
-Desarrolla una funcionalidad que permita a los usuarios buscar animes por su nombre. El programa debería devolver una lista de resultados que coincidan con la búsqueda.
+    Extiende la aplicación para que los usuarios puedan ingresar el nombre de un personaje y obtener detalles sobre él, como su historia, habilidades y apariciones en animes.
 
-#### 3. Obtener Top 5 Animes Populares
+-   Interfaz Amigable:
 
-Implementa una función que obtenga y muestre los 5 animes más populares actualmente según la Jikan API.
+    Diseña la interfaz de manera que sea intuitiva y responsive, adaptándose a diferentes tamaños de pantalla.
 
-#### 4. Detalles de un Personaje de Anime
+-   Manejo de Errores:
 
-Extiende tu programa para que también pueda proporcionar detalles sobre un personaje de anime. Los usuarios deben poder ingresar el nombre del personaje, y el programa debería devolver información relevante sobre él.
+    Implementa un manejo robusto de errores, informando al usuario de cualquier problema con la conexión a la API o datos no válidos.
 
-### Evaluación:
+### Primera Iteración:
 
-1. **Funcionalidad:**
+-   Optimización de Búsquedas:
 
-    - La aplicación debería realizar todas las tareas mencionadas correctamente.
+    Evita que se realice la misma búsqueda dos veces seguidas para mejorar la eficiencia.
 
-2. **Código Limpio:**
+-   Búsqueda Automática al Escribir:
 
-    - El código debe estar bien estructurado y seguir las mejores prácticas de programación.
+    Haz que la búsqueda se realice automáticamente al escribir, proporcionando una experiencia más fluida.
 
-3. **Documentación:**
+-   Debounce en Búsquedas Continuas:
 
-    - Incluye comentarios y/o documentación donde sea necesario para explicar el funcionamiento del código.
+    Implementa un mecanismo de debounce para evitar búsquedas continuas al escribir rápidamente, mejorando el rendimiento.
 
-4. **Manejo de Errores:**
-
-    - Implementa manejo de errores para situaciones como falta de conexión a internet, respuestas no válidas de la API, etc.
-
-5. **Creatividad:**
-    - Siéntete libre de agregar características adicionales o mejoras a la aplicación si lo deseas.
-
-### Entrega:
-
--   Sube tu código a un repositorio en GitHub y comparte el enlace con nosotros.
--   Incluye cualquier instrucción adicional necesaria para ejecutar tu programa.
-
----
-
-¡Buena suerte!
+###### ¡Buena suerte!
