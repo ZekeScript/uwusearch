@@ -1,6 +1,10 @@
 import './App.css'
+import { Animes } from './components/Animes'
+import { useAnimes } from './hooks/useAnimes'
 
 function App () {
+  const { animes } = useAnimes()
+
   return (
     <div className='page'>
 
@@ -13,7 +17,7 @@ function App () {
       </header>
 
       <main>
-        <p>Resultados</p>
+        <Animes animes={animes} />
       </main>
     </div>
   )
