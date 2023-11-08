@@ -1,5 +1,5 @@
 import responseAnimes from '../mocks/with-results.json'
-import withoutResults from '../mocks/no-results.json'
+// import withoutResults from '../mocks/no-results.json'
 
 export function useAnimes () {
   const animes = responseAnimes.data
