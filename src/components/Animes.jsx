@@ -1,10 +1,10 @@
 function ListOfAnimes ({ animes }) {
   return (
-    <ul>
+    <ul className='movies'>
       {
         animes.map(anime => (
-          <li key={anime.id}>
-            <h3>{anime.title}</h3>
+          <li className='movie' key={anime.id}>
+            <h3 className='movie-title'>{anime.title}</h3>
             <p>Score: {anime.score}</p>
             <img src={anime.poster} alt={anime.title} />
             <p>Year: {anime.season} {anime.year}</p>

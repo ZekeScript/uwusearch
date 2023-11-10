@@ -4,12 +4,14 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  width: 100%;
+  max-width: 800px;
 }
 
 main {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
+  width: 100%;
 }
 
 .form {
@@ -17,10 +19,43 @@ main {
   align-items: center;
   justify-content: center;
   gap: 10px;
+  margin-bottom: 30px;
 }
 .form input {
   margin: 0px;
 }
 .form button {
   border-radius: 4px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.movies {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+}
+
+.movie img{
+  border-radius: 10px;
+  margin: 8px 0 0 0;
+  padding: 0;
+}
+
+.movie-title {
+  font-size:  medium;
+  margin: 0;
+  padding: 0;
+}
+
+.movie p {
+  margin: 0;
+  padding: 0;
 }

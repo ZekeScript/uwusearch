@@ -1,7 +1,9 @@
-import responseAnimes from '../mocks/with-results.json'
-// import withoutResults from '../mocks/no-results.json'
+import { useState } from 'react'
+import withResults from '../mocks/with-results.json'
+import withoutResults from '../mocks/no-results.json'
 
-export function useAnimes () {
+export function useAnimes ({ search }) {
+  const [responseAnimes, setResponseAnime] = useState([])
   const animes = responseAnimes.data
 
   const mappedAnimes = animes?.map(anime => ({
@@ -13,5 +15,13 @@ export function useAnimes () {
     season: anime.season
   }))
 
-  return { animes: mappedAnimes }
+  const getMovies = () => {
+    if (search) {
+      setResponseAnime(withResults)
+    } else {
+      setResponseAnime(withoutResults)
+    }
+  }
+
+  return { animes: mappedAnimes, getMovies }
 }
