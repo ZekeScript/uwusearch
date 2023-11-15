@@ -1,27 +1,23 @@
 import { useState } from 'react'
-import withResults from '../mocks/with-results.json'
-import withoutResults from '../mocks/no-results.json'
+import { searchAnimes } from '../services/animes'
 
 export function useAnimes ({ search }) {
-  const [responseAnimes, setResponseAnime] = useState([])
-  const animes = responseAnimes.data
+  const [animes, setAnimes] = useState([])
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(null)
 
-  const mappedAnimes = animes?.map(anime => ({
-    id: anime.mal_id,
-    title: anime.title,
-    score: anime.score,
-    poster: anime.images.jpg.image_url,
-    year: anime.year,
-    season: anime.season
-  }))
-
-  const getMovies = () => {
-    if (search) {
-      setResponseAnime(withResults)
-    } else {
-      setResponseAnime(withoutResults)
+  const getMovies = async () => {
+    try {
+      setLoading(true)
+      setError(true)
+      const newAnimes = await searchAnimes({ search })
+      setAnimes(newAnimes)
+    } catch (error) {
+      setError(error.message)
+    } finally {
+      setLoading(false)
     }
   }
 
-  return { animes: mappedAnimes, getMovies }
+  return { animes, getMovies, loading, error }
 }

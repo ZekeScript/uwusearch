@@ -5,7 +5,7 @@ import { useSearch } from './hooks/useSearch'
 
 function App () {
   const { search, updateSearch, error } = useSearch()
-  const { animes, getMovies } = useAnimes({ search })
+  const { animes, loading, getMovies } = useAnimes({ search })
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -38,7 +38,9 @@ function App () {
       </header>
 
       <main>
-        <Animes animes={animes} />
+        {
+          loading ? <p>Cargando...</p> : <Animes animes={animes} />
+        }
       </main>
     </div>
   )
