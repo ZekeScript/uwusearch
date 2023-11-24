@@ -1,21 +1,31 @@
-import { useState } from 'react'
 import './App.css'
+import { useCallback, useState } from 'react'
 import { Animes } from './components/Animes'
 import { useAnimes } from './hooks/useAnimes'
 import { useSearch } from './hooks/useSearch'
+import debounce from 'just-debounce-it'
 
 function App () {
   const [sort, setSort] = useState(false)
   const { search, updateSearch, error } = useSearch()
-  const { animes, loading, getMovies } = useAnimes({ search, sort })
+  const { animes, loading, getAnimes } = useAnimes({ search, sort })
+
+  const debounceGetAnimes = useCallback(
+    debounce(search => {
+      getAnimes({ search })
+    }, 300)
+    , []
+  )
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    getMovies()
+    getAnimes({ search })
   }
 
   const handleChange = (event) => {
-    updateSearch(event.target.value)
+    const newSearch = event.target.value
+    updateSearch(newSearch)
+    debounceGetAnimes(newSearch)
   }
 
   const handleSort = () => {
